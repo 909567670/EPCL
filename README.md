@@ -10,4 +10,8 @@
 ## 评估
 修改并运行脚本 `my_eval.sh`
 
+## ONNX
+导出：`test_export_onnx.py`，得到vit和sdp模型
+测试：`test_use_onnx.py`
+
 
