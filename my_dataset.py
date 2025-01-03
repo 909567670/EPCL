@@ -95,7 +95,7 @@ def my_build_transform(resize=False):
     if resize:
         t.append(transforms.Resize((224, 224)))
 
-    t.append(
+    t.extend([
         # 依概率p水平翻转  依概率p垂直翻转
         transforms.RandomHorizontalFlip(p=0.5),  # p表示概率
         transforms.RandomVerticalFlip(p=0.2),  # p表示概率
@@ -107,7 +107,7 @@ def my_build_transform(resize=False):
         transforms.RandomGrayscale(p=0.2),  #进行随机的灰度化
         transforms.ToTensor(),
         # 把一个取值范围是[0,255]的PIL.Image或者shape为(H,W,C)的numpy.ndarray，转换成形状为[C,H,W]，取值范围是[0,1.0]的torch.FloadTensor /255.操作
-    )
+    ])
     return transforms.Compose(t)
 
 
