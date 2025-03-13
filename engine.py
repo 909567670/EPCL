@@ -425,6 +425,9 @@ def get_sprompt_idx(task_id, train=False, cls_features=None, args=None,):
 
         batch_select_acc = (idx == task_id).sum().item() / idx.shape[0]
         # print(f'task:{task_id}一批数据选中率:', batch_select_acc)
+
+    # 2025/03/31 优化:将idx移动至device
+    idx = idx.to(torch.device(args.device))
     return idx, batch_select_acc
 
 
