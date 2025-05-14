@@ -120,7 +120,7 @@ def get_args_parser(subparsers):
     subparsers.add_argument('--print_freq', type=int, default=10, help = 'The frequency of printing')
 
     # my para
-    subparsers.add_argument('--no_log',action='store_true',help = 'not gen log txt file') # 不生成log文件
+    subparsers.add_argument('--no_log',action='store_true',help = 'not gen log txt file') # 不生成L2P 原生log文件, 已经实现了新的log生成
     subparsers.add_argument('--no_checkpoints',action='store_true',help = 'not gen checkpoints pth file') # 不生成checkpoints文件
     subparsers.add_argument('--eval_all_tasks',action='store_true',help = 'each task stage eval all tasks') # 每个任务阶段都评估所有任务
 
