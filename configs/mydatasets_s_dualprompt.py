@@ -95,7 +95,7 @@ def get_args_parser(subparsers):
     # Use prompt pool in L2P to implement E-Prompt 
     subparsers.add_argument('--prompt_pool', default=True, type=bool,)
     subparsers.add_argument('--size', default=10, type=int,)    # ※该参数无需设置 提示池大小 在s-dual中 = 任务数量  
-    subparsers.add_argument('--length', default=5,type=int, )   # 每个提示的token长度 其值为实际长度2倍 (pk+pv)
+    subparsers.add_argument('--length', default=5,type=int, )   # 每个提示的token长度 其实际提示长度为length2倍 (pk+pv)
     subparsers.add_argument('--top_k', default=6, type=int, )   # ※该参数无需设置 仅作用于L2P和DualPrompt 选择前topk个提示用于PT
     subparsers.add_argument('--initializer', default='uniform', type=str,)
     subparsers.add_argument('--prompt_key', default=True, type=bool,)
