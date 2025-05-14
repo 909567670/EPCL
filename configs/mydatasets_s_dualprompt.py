@@ -120,18 +120,18 @@ def get_args_parser(subparsers):
     subparsers.add_argument('--print_freq', type=int, default=10, help = 'The frequency of printing')
 
     # my para
-    subparsers.add_argument('--no_log',action='store_true',help = 'not gen log txt file') # 不生成L2P log文件
+    subparsers.add_argument('--no_log',action='store_true',help = 'not gen log txt file') # 不生成log文件
     subparsers.add_argument('--no_checkpoints',action='store_true',help = 'not gen checkpoints pth file') # 不生成checkpoints文件
     subparsers.add_argument('--eval_all_tasks',action='store_true',help = 'each task stage eval all tasks') # 每个任务阶段都评估所有任务
 
     subparsers.add_argument('--datasets_list',type=str,nargs="*",help="训练的数据集列表") # *代表0个或多个参数
 
-    subparsers.add_argument('--my_train',action='store_true',help = '自定义训练模式')
+    subparsers.add_argument('--my_train',action='store_true',help = '自定义训练模式') # !暂未实现
 
     subparsers.add_argument('--load_checkpoint',type=str,help = '指定checkpoint用于训练/评估, 存放于output_dir下')
     
-    subparsers.add_argument('--multi_classifier',type=bool, default=True, help = '每个任务单独使用分类头') # 默认使用
+    subparsers.add_argument('--multi_classifier',type=bool, default=True, help = '每个任务单独使用分类头') # 默认使用 多分类头
 
-    subparsers.add_argument('--diff_clustering',type=bool, default=True, help = '有异物,无异物 单独聚类') # 默认使用
+    subparsers.add_argument('--diff_clustering',type=bool, default=True, help = '有异物,无异物 单独聚类') # 默认使用 单独聚类
     subparsers.add_argument('--mean_idx',type=bool, default=False, help = '使用均值计算最近聚类中心, 否则使用最小值') 
-    subparsers.add_argument('--k_means',type=int, default=3, help = 'K均值聚类K值 默认3聚类')
+    subparsers.add_argument('--k_means',type=int, default=3, help = 'K均值聚类 默认3聚类')
