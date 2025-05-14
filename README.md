@@ -1,4 +1,4 @@
-# sdp 持续学习
+# Extensiable Prompt-based Continual Learning (EPCL) 持续学习
 
 ## 环境 
 使用`sdp.yaml`安装conda环境
